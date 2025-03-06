@@ -1,0 +1,11 @@
+<div class="space-y-4 p-4 bg-gray-100 rounded-lg mb-4" *ngIf='hasName'>
+	<p *ngIf="hasName && !messages.length">New messages will appear here.</p>
+
+	<div *ngIf="messages.length">
+		<div *ngFor="let message of messages" class="flex items-center space-x-2">
+			<span class="text-gray-500">{{ message.createdAt | date: 'short' }}</span>
+			<strong class="text-blue-500">{{ message.author }}</strong>
+			<p class="text-gray-800">{{ message.text }}</p>
+		</div>
+	</div>
+</div>
